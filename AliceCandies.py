@@ -1,10 +1,6 @@
 class Solution:
-    def distributeCandies(self, candyType: List[int]) -> int:
-        limit = int(len(candyType) / 2)
-        len2 = len(set(candyType))
-        if len2 <= 1:
-            return 1
-        if len2 < limit:
-            return len2
-        else:
-            return limit
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        for i in range(len(nums)):
+            nums[i] = frozenset(nums[i])
+        intersection = list(frozenset.intersection(*nums))
+        return sorted(intersection)
