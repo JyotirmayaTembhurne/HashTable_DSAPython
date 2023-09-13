@@ -28,3 +28,21 @@ class Solution:
             print(current.val)
             current.next = current.next.next
         return head
+
+# FASTER APPROACH
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = ListNode(0,head)
+        fast = head
+        if not head.next:
+            return None           
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return head
