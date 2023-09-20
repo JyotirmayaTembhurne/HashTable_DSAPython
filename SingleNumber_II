@@ -1,0 +1,14 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        pair = dict()
+        for value in nums:
+            try:
+                pair[value] +=1
+            except Exception:
+                pair[value] = 1
+        for key,value in pair.items():
+            if value == 1:
+                return key
+        pair = None
+        
+            
