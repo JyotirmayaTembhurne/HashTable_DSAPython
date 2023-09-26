@@ -1,0 +1,10 @@
+class Solution:
+    def partitionString(self, s: str) -> int:
+        temp = set()
+        Count = 1
+        for char in s:
+            if char in temp:
+                Count += 1
+                temp.clear()
+            temp.add(char)
+        return Count
