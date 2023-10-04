@@ -1,0 +1,17 @@
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        # horizontal = int()
+        # vertical = int()
+        # for char in moves:
+        #     if char == "U":
+        #         vertical += 1
+        #     elif char == "D":
+        #         vertical -= 1
+        #     if char == "L":
+        #         horizontal += 1
+        #     elif char == "R":
+        #         horizontal -= 1
+        # return horizontal == vertical == 0
+        return moves.count("U")==moves.count("D") and moves.count("L")==moves.count("R")
+
+        
