@@ -1,0 +1,20 @@
+class Solution:
+    def findMatrix(self, nums: List[int]) -> List[List[int]]:
+        countpair = dict.fromkeys(nums, int())
+        result = list()
+        maxcount = 0
+        for number in nums:
+            countpair[number] += 1
+            if countpair[number] > maxcount:
+                maxcount = countpair[number]
+        # print(countpair, maxcount)
+        for i in range(maxcount):
+            temp = list()
+            for number in countpair.keys():
+                if countpair[number] > 0:
+                    temp.append(number)
+                    countpair[number] -= 1
+            result.append(temp)
+        return result
+
+        
