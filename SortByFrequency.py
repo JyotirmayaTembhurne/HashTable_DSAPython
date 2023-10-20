@@ -1,6 +1,6 @@
 from operator import itemgetter
 
-nums = [2, 3, 1, 3, 2, 4, 4]
+nums = [2, 3, 1, 3, 2]
 Output = [1, 3, 3, 2, 2]
 # Explanation: '3' has a frequency of 1,
 # '1' has a frequency of 2, and
