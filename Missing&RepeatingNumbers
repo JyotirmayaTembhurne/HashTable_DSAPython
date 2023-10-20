@@ -1,0 +1,19 @@
+def findMissingRepeatingNumbers(a: [int]) -> [int]:
+    p, q = 0, 0
+    n = len(a)
+    pair1 = dict.fromkeys(a, int())
+    expected = set()
+    for value in a:
+        pair1[value] += 1
+    for i in range(1, n + 1):
+        expected.add(i)
+    for value in expected:
+        try:
+            if pair1[value] > 1:
+                p = value
+        except Exception:
+            q = value
+        if p != 0 and q != 0:
+            break
+    return p, q
+
