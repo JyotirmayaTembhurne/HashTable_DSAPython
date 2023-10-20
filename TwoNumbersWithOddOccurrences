@@ -1,0 +1,11 @@
+from typing import *
+
+def twoOddNum(arr : List[int]) -> List[int]:
+    freq = dict.fromkeys(arr,int())
+    ans = list()
+    for value in arr:
+        freq[value]+=1
+    for key in freq.keys():
+        if freq[key] % 2!=0:
+            ans.append(key)
+    return sorted(ans, reverse = True)
