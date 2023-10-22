@@ -1,0 +1,20 @@
+from typing import List
+
+def getFrequencies(arr: List[int]) -> List[int]: 
+    freq = dict.fromkeys(arr, int())
+    for value in arr:
+        freq[value] += 1
+    maxfreq, minfreq = max(freq.values()), min(freq.values())
+    maxval, minval = 0, 0
+    for key in freq.keys():
+        if freq[key] == maxfreq:
+            if maxval == 0:
+                maxval = key
+            elif key < maxval:
+                maxval = key
+        if freq[key] == minfreq:
+            if minval == 0:
+                minval = key
+            elif key < minval:
+                minval = key
+    return [maxval,minval]
