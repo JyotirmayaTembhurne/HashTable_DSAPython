@@ -1,0 +1,11 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        from operator import itemgetter
+        counter = dict.fromkeys(nums,0)
+        for value in nums:
+            counter[value]+=1
+        counter = sorted(counter.items(), key = itemgetter(1), reverse = True)
+        ans = list()
+        for i in range(k):
+            ans.append(counter[i][0])
+        return ans
