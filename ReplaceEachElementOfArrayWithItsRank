@@ -1,0 +1,14 @@
+from typing import List
+
+def replaceWithRank(arr: List[int],n : int) -> List[int]:
+    ranks = dict.fromkeys(arr,0)
+    sortedarr = sorted(arr)
+    i,k = 0,1
+    while i<n:
+        if ranks[sortedarr[i]] == 0:
+            ranks[sortedarr[i]] = k
+            k+=1
+        i+=1
+    for i in range(n):
+        arr[i] = ranks[arr[i]]
+    return arr
